@@ -1,5 +1,5 @@
 package main;
-
+import java.util.*;
 
 public class BalancedBrackets {
     /**
@@ -28,8 +28,12 @@ public class BalancedBrackets {
                 brackets++;
             } else if (ch == ']') {
                 brackets--;
+                if(brackets < 0){
+                    break;
+                }
             }
         }
+
         return brackets == 0;
     }
 }
